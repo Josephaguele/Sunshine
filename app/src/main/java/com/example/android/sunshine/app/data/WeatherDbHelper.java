@@ -28,20 +28,21 @@ public class WeatherDbHelper extends SQLiteOpenHelper {
         // CREATION OF LOCATION TABLE
         // Create a table to hold locations. A location consists of the string supplied in the
         // location setting, the city name, and the latitude and longitude
-        final String SQL_CREATE_LOCATION_TABLE = "CREATE TABLE" + LocationEntry.TABLE_NAME + " ( " +
-                LocationEntry._ID + "INTEGER PRIMARY KEY, " +
+        final String SQL_CREATE_LOCATION_TABLE = " CREATE TABLE " + LocationEntry.TABLE_NAME + " ( " +
+                LocationEntry._ID  +  " INTEGER PRIMARY KEY," +
                 LocationEntry.COLUMN_LOCATION_SETTING + " TEXT UNIQUE NOT NULL, " +
                 LocationEntry.COLUMN_CITY_NAME + " TEXT NOT NULL, " +
                 LocationEntry.COLUMN_COORD_LAT + " REAL NOT NULL, " +
-                LocationEntry.COLUMN_COORD_LONG + " REAL NOT NULL);";
+                LocationEntry.COLUMN_COORD_LONG + " REAL NOT NULL " +
+                ");";
 
-        final String SQL_CREATE_WEATHER_TABLE = "CREATE TABLE " + WeatherEntry.TABLE_NAME + " ( " +
+        final String SQL_CREATE_WEATHER_TABLE = " CREATE TABLE " + WeatherEntry.TABLE_NAME +  " ( " +
                 // Why AutoIncrement here, and not above?
                 // Unique keys will be auto-generated in either case. But for weather
                 //forecasting , it is reasonable to assume the user will want information
                 // for a certain date and all dates "following", so the forecast data
                 // should be sorted accordingly.
-                WeatherEntry._ID + "INTEGER PRIMARY KEY AUTOINCREMENT," +
+                WeatherEntry._ID  +  " INTEGER PRIMARY KEY AUTOINCREMENT," +
 
                 // the ID of the location entry associated with this weather data
                 WeatherEntry.COLUMN_LOC_KEY + " INTEGER NOT NULL, " +

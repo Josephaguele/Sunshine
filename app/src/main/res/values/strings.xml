@@ -50,6 +50,11 @@
     <!-- Value in SharedPreferences for imperial temperature unit option [CHAR LIMIT=NONE] -->
     <string name="pref_units_imperial" translatable="false">imperial</string>
 
+    <!-- Date label when displaying today's weather forecast [CHAR LIMIT=20] -->
+    <string name="today">Today</string>
+
+    <!--Date label when displaying tomorrow's weather forecast [CHAR LIMIT =20] -->
+    <string name="tomorrow">Tomorrow</string>
 
     <!-- Language-specific constants -->
 
